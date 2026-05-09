@@ -11,6 +11,16 @@ namespace TP5_GRUPO_2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                Clases c = new Clases();
+                c.CargarProvincias(ddlProvincia);
+            }
+
+        }
+
+        protected void TextBox1_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
