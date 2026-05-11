@@ -11,6 +11,7 @@ namespace TP5_GRUPO_2
     {
         private string consulta; 
         public Base_De_Datos_Sucursal Sucursal = new Base_De_Datos_Sucursal();
+        private int Filasafectadas;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -23,8 +24,37 @@ namespace TP5_GRUPO_2
 
         protected void btnaceptar_Click(object sender, EventArgs e)
         {
+
             consulta = "INSERT INTO Sucursal (NombreSucursal, DescripcionSucursal, Id_ProvinciaSucursal, DireccionSucursal) VALUES ('" + txtNombreSucursal.Text + "', '" + txtDescripcion.Text + "', " + ddlProvincia.SelectedValue + ", '" + txtDireccion.Text + "')";
-            Sucursal.Agregar_Base_De_Datos(consulta);   
+            Filasafectadas = Sucursal.Agregar_Base_De_Datos(consulta);
+            Mensaje(Filasafectadas);
+            LimpiarCampos();
+
+        }
+
+        private void Mensaje(int Filas)
+        {
+            if(Filas == 1)
+            {
+                lblMensaje.Text = "LA SUCURSAL SE HA AGREGADO CON EXITO";
+            }
+            else
+            {
+                lblMensaje.Text = "LA SUCURSAL NO SE PUDO AGREGAR, INTENTE DE NUEVO PORFAVOR!!!";
+            }
+        }
+
+        private void LimpiarCampos()
+        {
+            txtDescripcion.Text = string.Empty;
+            txtDireccion.Text = string.Empty;
+            txtNombreSucursal.Text = string.Empty;
+            ddlProvincia.SelectedIndex = 0;
+        }
+
+        protected void txtDescripcion_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

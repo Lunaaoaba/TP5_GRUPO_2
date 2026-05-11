@@ -15,15 +15,22 @@ namespace TP5_GRUPO_2
 
         public int Agregar_Base_De_Datos(string consulta)
         {
-            SqlConnection conexion = new SqlConnection(conexionBBD);
-            conexion.Open();
+            try
+            {
+                SqlConnection conexion = new SqlConnection(conexionBBD);
+                conexion.Open();
 
-            SqlCommand comando = new SqlCommand(consulta, conexion); 
-            int filasAfectadas = comando.ExecuteNonQuery();
+                SqlCommand comando = new SqlCommand(consulta, conexion);
+                int filasAfectadas = comando.ExecuteNonQuery();
 
-            conexion.Close();
+                conexion.Close();
 
-            return filasAfectadas;
+                return filasAfectadas;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
 
         public void Cargar_Base_De_Datos_DropDownLits(string consulta, DropDownList ddlProvincia, string item, string value)
