@@ -98,7 +98,7 @@
                         <td style="padding-right: 60px">
                             <u><asp:HyperLink ID="ASucursal" runat="server" NavigateUrl="~/AgregarSucursal.aspx">Agregar Sucursal</asp:HyperLink></u></td>
                         <td style="padding-right: 60px">
-                            <u><asp:HyperLink ID="LSucursal" runat="server">Listado de Sucursales</asp:HyperLink></u></td>
+                            <u><asp:HyperLink ID="LSucursal" runat="server" NavigateUrl="~/ListadoSucursales.aspx">Listado de Sucursales</asp:HyperLink></u></td>
                         <td>
                             <u><asp:HyperLink ID="ESucursal" runat="server">Eliminar Sucursal</asp:HyperLink></u></td>
                     </tr>
@@ -120,18 +120,23 @@
                     </tr>
                     <tr>
                         <td style="padding-left: 48px" class="auto-style2"><h3>Descripción:</h3></td>
-                        <td class="auto-style3"><asp:TextBox ID="txtDescripcion" runat="server" Height="16px" OnTextChanged="txtDescripcion_TextChanged"></asp:TextBox>
+                        <td class="auto-style3"><asp:TextBox ID="txtDescripcion" runat="server" Height="16px"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidatorDescripcion" runat="server" CssClass="errorNombre" ErrorMessage="Ingrese una Descripcion" Height="16px" Width="132px" ControlToValidate="txtDescripcion"></asp:RequiredFieldValidator>
                             <asp:RegularExpressionValidator ID="RegularExpressionValidatorDescripcion" runat="server" CssClass="errorNombre" ErrorMessage="Ingrese Carácteres Válidos" Height="10px" ValidationExpression="^[a-zA-Z0-9\s]+$" ControlToValidate="txtDescripcion"></asp:RegularExpressionValidator>
                         </td>
                     </tr>
                     <tr>
                         <td style="padding-left: 48px" class="auto-style1"><h3>Provincia:</h3></td>
-                        <td class="auto-style4"> <asp:DropDownList ID="ddlProvincia" runat="server"></asp:DropDownList></td>
+                        <td class="auto-style4"> <asp:DropDownList ID="ddlProvincia" runat="server"></asp:DropDownList>
+                            <asp:RequiredFieldValidator ID="rfvProvincia" runat="server" ControlToValidate="ddlProvincia" CssClass="errorNombre" ErrorMessage="Seleccione una Provincia" InitialValue="0"></asp:RequiredFieldValidator>
+                        </td>
                     </tr>
                     <tr>
                         <td style="padding-left: 48px" class="auto-style1"><h3>Dirección:</h3></td>
-                        <td class="auto-style4"><asp:TextBox ID="txtDireccion" runat="server"></asp:TextBox></td>
+                        <td class="auto-style4"><asp:TextBox ID="txtDireccion" runat="server"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" CssClass="errorNombre" ControlToValidate="txtDireccion" ErrorMessage="Ingrese una Direccion"></asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="revDireccion" runat="server" ControlToValidate="txtDireccion" CssClass="errorNombre" ErrorMessage="Ingrese Carácteres Validos" ValidationExpression="^[a-zA-Z0-9\s]+$"></asp:RegularExpressionValidator>
+                        </td>
                    </tr>
                     <tr>
                         <td style="padding-left: 48px" class="auto-style1"></td>

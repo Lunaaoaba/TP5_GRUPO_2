@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace TP5_GRUPO_2
 {
-    public class Base_De_Datos_Sucursal
+    public class BD_Sucursal
     {
         private const string conexionBBD = @"Data Source=localhost\SQLEXPRESS;Initial Catalog=BDSucursales;Integrated Security=True";
 

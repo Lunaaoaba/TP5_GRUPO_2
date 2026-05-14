@@ -10,7 +10,7 @@ namespace TP5_GRUPO_2
     public partial class AgregarSucursal : System.Web.UI.Page
     {
         private string consulta; 
-        public Base_De_Datos_Sucursal Sucursal = new Base_De_Datos_Sucursal();
+        public BD_Sucursal Sucursal = new BD_Sucursal();
         private int Filasafectadas;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -50,11 +50,6 @@ namespace TP5_GRUPO_2
             txtDireccion.Text = string.Empty;
             txtNombreSucursal.Text = string.Empty;
             ddlProvincia.SelectedIndex = 0;
-        }
-
-        protected void txtDescripcion_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
