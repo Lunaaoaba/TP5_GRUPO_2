@@ -19,17 +19,14 @@ namespace TP5_GRUPO_2
                 consulta = "SELECT * FROM Provincia";
                 Sucursal.Cargar_Base_De_Datos_DropDownLits(consulta, ddlProvincia, "DescripcionProvincia", "Id_Provincia");
             }
-
         }
 
         protected void btnaceptar_Click(object sender, EventArgs e)
         {
-
             consulta = "INSERT INTO Sucursal (NombreSucursal, DescripcionSucursal, Id_ProvinciaSucursal, DireccionSucursal) VALUES ('" + txtNombreSucursal.Text + "', '" + txtDescripcion.Text + "', " + ddlProvincia.SelectedValue + ", '" + txtDireccion.Text + "')";
             Filasafectadas = Sucursal.Agregar_Base_De_Datos(consulta);
             Mensaje(Filasafectadas);
             LimpiarCampos();
-
         }
 
         private void Mensaje(int Filas)

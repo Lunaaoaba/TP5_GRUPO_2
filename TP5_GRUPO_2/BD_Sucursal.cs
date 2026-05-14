@@ -29,7 +29,7 @@ namespace TP5_GRUPO_2
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
         }
 
@@ -50,5 +50,16 @@ namespace TP5_GRUPO_2
             Conexion.Close();
         }
 
+        public void Cargar_Base_De_Datos_GridView(string consulta, GridView gvsucursal)
+        {
+            SqlConnection conexion = new SqlConnection(conexionBBD); 
+            conexion.Open();
+
+            SqlCommand Comando = new SqlCommand(consulta, conexion);
+            SqlDataReader lectura = Comando.ExecuteReader();
+
+            gvsucursal.DataSource = lectura;
+            gvsucursal.DataBind();
+        }
     }
 }

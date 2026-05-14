@@ -120,7 +120,25 @@
             box-shadow: 0 0 8px rgba(47, 111, 255, 0.4);
             background-color: #ffffff;
         }
+         .colorValidator {
+             color: red;
+         }
+         .miGrid {
+             background-color: white;
+             border-collapse: collapse;
+         }
 
+             .miGrid th {
+                 background-color: #f2f2f2;
+                 color: black;
+                 padding: 8px;
+             }
+
+             .miGrid td {
+                 background-color: white;
+                 color: black;
+                 padding: 8px;
+             }
 
         </style>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -157,8 +175,14 @@
                     <td>
                         <asp:TextBox ID="tbIdSucursal" runat="server" CssClass="tb_style"></asp:TextBox>
                     </td>
+                    <td>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="tbIdSucursal" ErrorMessage="Debe de ingresar numeros" CssClass="colorValidator" ValidationExpression="^[0-9,$]*$"></asp:RegularExpressionValidator>
+                    </td>
+                    <td></td>
+                    <td></td>
                 </tr>
             </table>
+            <asp:GridView ID="gvsucursal" runat="server" CssClass="miGrid"></asp:GridView>
         </div>
     </form>
 </body>
