@@ -173,12 +173,14 @@
                         <h4 class="Sub2">Ingrese Id Sucursal:</h4>
                     </td>
                     <td>
-                        <asp:TextBox ID="tbIdSucursal" runat="server" CssClass="tb_style"></asp:TextBox>
+                        <asp:TextBox ID="txtIdSucursal" runat="server" CssClass="tb_style" ValidationGroup="grupo1"></asp:TextBox>
                     </td>
                     <td>
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="tbIdSucursal" ErrorMessage="Debe de ingresar numeros" CssClass="colorValidator" ValidationExpression="^[0-9,$]*$"></asp:RegularExpressionValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtIdSucursal" ErrorMessage="Debe de ingresar numeros" CssClass="colorValidator" ValidationExpression="^[0-9,$]*$" ValidationGroup="grupo1"></asp:RegularExpressionValidator>
                     </td>
-                    <td></td>
+                    <td>
+                        <asp:Button ID="btnfiltrar" runat="server" OnClick="btnfiltrar_Click" Text="Filtrar" ValidationGroup="grupo1" />
+                    </td>
                     <td></td>
                 </tr>
             </table>

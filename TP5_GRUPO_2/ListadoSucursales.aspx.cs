@@ -13,7 +13,12 @@ namespace TP5_GRUPO_2
         private BD_Sucursal Sucursal = new BD_Sucursal();
         protected void Page_Load(object sender, EventArgs e)
         {
-            consulta = "SELECT Id_Sucursal, NombreSucursal, DescripcionSucursal, DescripcionProvincia, DireccionSucursal FROM Sucursal INNER JOIN Provincia ON Sucursal.Id_ProvinciaSucursal = Provincia.Id_Provincia";
+
+        }
+
+        protected void btnfiltrar_Click(object sender, EventArgs e)
+        {
+            consulta = "SELECT Id_Sucursal, NombreSucursal, DescripcionSucursal, DescripcionProvincia, DireccionSucursal FROM Sucursal INNER JOIN Provincia ON Sucursal.Id_ProvinciaSucursal = Provincia.Id_Provincia WHERE Id_Sucursal = " + txtIdSucursal.Text;
             Sucursal.Cargar_Base_De_Datos_GridView(consulta, gvsucursal);
         }
     }

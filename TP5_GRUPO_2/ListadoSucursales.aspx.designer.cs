@@ -51,13 +51,13 @@ namespace TP5_GRUPO_2
         protected global::System.Web.UI.WebControls.HyperLink ESucursal;
 
         /// <summary>
-        /// Control tbIdSucursal.
+        /// Control txtIdSucursal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbIdSucursal;
+        protected global::System.Web.UI.WebControls.TextBox txtIdSucursal;
 
         /// <summary>
         /// Control RegularExpressionValidator1.
@@ -67,6 +67,15 @@ namespace TP5_GRUPO_2
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
+
+        /// <summary>
+        /// Control btnfiltrar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnfiltrar;
 
         /// <summary>
         /// Control gvsucursal.
