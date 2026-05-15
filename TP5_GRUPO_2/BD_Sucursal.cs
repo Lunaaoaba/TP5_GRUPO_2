@@ -52,14 +52,18 @@ namespace TP5_GRUPO_2
 
         public void Cargar_Base_De_Datos_GridView(string consulta, GridView gvsucursal)
         {
-            SqlConnection conexion = new SqlConnection(conexionBBD); 
+            SqlConnection conexion = new SqlConnection(conexionBBD);
             conexion.Open();
 
-            SqlCommand Comando = new SqlCommand(consulta, conexion);
-            SqlDataReader lectura = Comando.ExecuteReader();
+            SqlCommand comando = new SqlCommand(consulta, conexion);
+
+            SqlDataReader lectura = comando.ExecuteReader();
 
             gvsucursal.DataSource = lectura;
             gvsucursal.DataBind();
+
+            lectura.Close();
+            conexion.Close();
         }
     }
 }

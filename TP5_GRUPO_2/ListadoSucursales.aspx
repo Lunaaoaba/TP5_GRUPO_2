@@ -181,7 +181,9 @@
                     <td>
                         <asp:Button ID="btnfiltrar" runat="server" OnClick="btnfiltrar_Click" Text="Filtrar" ValidationGroup="grupo1" />
                     </td>
-                    <td></td>
+                    <td>
+                        <asp:Button ID="btMostrarTodos" runat="server" OnClick="btMostrarTodos_Click" Text="Mostrar Todos" />
+                    </td>
                 </tr>
             </table>
             <asp:GridView ID="gvsucursal" runat="server" CssClass="miGrid"></asp:GridView>
