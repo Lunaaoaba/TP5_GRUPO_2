@@ -13,7 +13,7 @@ namespace TP5_GRUPO_2
         {
             consulta = "SELECT Id_Sucursal, NombreSucursal, " +  "DescripcionSucursal, DescripcionProvincia, DireccionSucursal " + "FROM Sucursal " + "INNER JOIN Provincia " + "ON Sucursal.Id_ProvinciaSucursal = Provincia.Id_Provincia ";
             consulta += condicion;
-            Sucursal.Cargar_Base_De_Datos_GridView(consulta, gvsucursal);
+            Sucursal.Cargar_BD_GridView(consulta, gvsucursal);
         }
 
         private string consulta; 
@@ -32,12 +32,12 @@ namespace TP5_GRUPO_2
                 CargarGrid("WHERE Id_Sucursal = " + numero);
             }
 
-          
+    
         }
 
         protected void btMostrarTodos_Click(object sender, EventArgs e)
         {
-
+            CargarGrid();
         }
     }
 

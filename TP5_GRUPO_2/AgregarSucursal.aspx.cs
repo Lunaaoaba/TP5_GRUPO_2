@@ -17,14 +17,14 @@ namespace TP5_GRUPO_2
             if (!IsPostBack)
             {
                 consulta = "SELECT * FROM Provincia";
-                Sucursal.Cargar_Base_De_Datos_DropDownLits(consulta, ddlProvincia, "DescripcionProvincia", "Id_Provincia");
+                Sucursal.Cargar_BD_DropDownList(consulta, ddlProvincia, "DescripcionProvincia", "Id_Provincia");
             }
         }
 
         protected void btnaceptar_Click(object sender, EventArgs e)
         {
             consulta = "INSERT INTO Sucursal (NombreSucursal, DescripcionSucursal, Id_ProvinciaSucursal, DireccionSucursal) VALUES ('" + txtNombreSucursal.Text + "', '" + txtDescripcion.Text + "', " + ddlProvincia.SelectedValue + ", '" + txtDireccion.Text + "')";
-            Filasafectadas = Sucursal.Agregar_Base_De_Datos(consulta);
+            Filasafectadas = Sucursal.Agregar_BD(consulta);
             Mensaje(Filasafectadas);
             LimpiarCampos();
         }

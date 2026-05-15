@@ -13,7 +13,7 @@ namespace TP5_GRUPO_2
     {
         private const string conexionBBD = @"Data Source=localhost\SQLEXPRESS;Initial Catalog=BDSucursales;Integrated Security=True";
 
-        public int Agregar_Base_De_Datos(string consulta)
+        public int Agregar_BD(string consulta)
         {
             try
             {
@@ -33,7 +33,7 @@ namespace TP5_GRUPO_2
             }
         }
 
-        public void Cargar_Base_De_Datos_DropDownLits(string consulta, DropDownList ddlProvincia, string item, string value)
+        public void Cargar_BD_DropDownList(string consulta, DropDownList ddlProvincia, string item, string value)
         {
             SqlConnection Conexion = new SqlConnection(conexionBBD);
             Conexion.Open();
@@ -50,7 +50,7 @@ namespace TP5_GRUPO_2
             Conexion.Close();
         }
 
-        public void Cargar_Base_De_Datos_GridView(string consulta, GridView gvsucursal)
+        public void Cargar_BD_GridView(string consulta, GridView gvsucursal)
         {
             SqlConnection conexion = new SqlConnection(conexionBBD);
             conexion.Open();
