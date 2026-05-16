@@ -25,19 +25,27 @@ namespace TP5_GRUPO_2
 
         protected void btnfiltrar_Click(object sender, EventArgs e)
         {
-            int numero;
-
-            if (int.TryParse(txtIdSucursal.Text, out numero))
+            if (Page.IsValid)
             {
-                CargarGrid("WHERE Id_Sucursal = " + numero);
-            }
+                int numero;
 
-    
+                if (int.TryParse(txtIdSucursal.Text, out numero))
+                {
+                    CargarGrid("WHERE Id_Sucursal = " + numero);
+                }
+
+                limpiarCampos();
+            }
         }
 
         protected void btMostrarTodos_Click(object sender, EventArgs e)
         {
             CargarGrid();
+        }
+
+        private void limpiarCampos()
+        {
+            txtIdSucursal.Text = string.Empty;
         }
     }
 

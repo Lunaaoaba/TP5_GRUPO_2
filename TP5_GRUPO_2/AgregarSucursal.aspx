@@ -100,7 +100,7 @@
                         <td style="padding-right: 60px">
                             <u><asp:HyperLink ID="LSucursal" runat="server" NavigateUrl="~/ListadoSucursales.aspx">Listado de Sucursales</asp:HyperLink></u></td>
                         <td>
-                            <u><asp:HyperLink ID="ESucursal" runat="server">Eliminar Sucursal</asp:HyperLink></u></td>
+                            <u><asp:HyperLink ID="ESucursal" runat="server" NavigateUrl="~/EliminarSucursales.aspx">Eliminar Sucursal</asp:HyperLink></u></td>
                     </tr>
                 </table>
             </div>

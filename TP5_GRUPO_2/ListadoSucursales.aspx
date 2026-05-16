@@ -123,22 +123,63 @@
          .colorValidator {
              color: red;
          }
-         .miGrid {
-             background-color: white;
-             border-collapse: collapse;
+          .miGrid {
+         width: 95%;
+         margin-top: 20px;
+         border-collapse: collapse;
+         background-color: rgba(255,255,255,0.92);
+         border-radius: 10px;
+         overflow: hidden;
+         box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+         font-family: Arial, Helvetica, sans-serif;
+     }
+
+         .miGrid th {
+             background: linear-gradient(90deg, #1d3f91, #2f6fff);
+             color: white;
+             padding: 12px;
+             text-align: left;
+             font-size: 16px;
+             border-bottom: 2px solid #8ecbff;
          }
 
-             .miGrid th {
-                 background-color: #f2f2f2;
-                 color: black;
-                 padding: 8px;
-             }
+         .miGrid td {
+             padding: 10px;
+             color: #243b55;
+             font-size: 15px;
+             border-bottom: 1px solid #d6e4f7;
+         }
 
-             .miGrid td {
-                 background-color: white;
-                 color: black;
-                 padding: 8px;
-             }
+         .miGrid tr:nth-child(even) {
+             background-color: #f4f8ff;
+         }
+
+         .miGrid tr:hover {
+             background-color: #dbe9ff;
+             transition: 0.2s;
+         }
+
+     .btnEstilo {
+         background: linear-gradient(90deg, #1d3f91, #2f6fff);
+         color: white;
+         border: none;
+         padding: 10px 18px;
+         border-radius: 8px;
+         font-size: 15px;
+         font-weight: bold;
+         cursor: pointer;
+         transition: 0.2s;
+         box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+     }
+
+         .btnEstilo:hover {
+             background: linear-gradient(90deg, #16357c, #2459d6);
+             transform: scale(1.03);
+         }
+
+         .btnEstilo:active {
+             transform: scale(0.98);
+         }
 
         </style>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -155,7 +196,7 @@
                         <td style="padding-right: 60px">
                             <u><asp:HyperLink ID="LSucursal" runat="server" NavigateUrl="~/ListadoSucursales.aspx">Listado de Sucursales</asp:HyperLink></u></td>
                         <td>
-                            <u><asp:HyperLink ID="ESucursal" runat="server">Eliminar Sucursal</asp:HyperLink></u></td>
+                            <u><asp:HyperLink ID="ESucursal" runat="server" NavigateUrl="~/EliminarSucursales.aspx">Eliminar Sucursal</asp:HyperLink></u></td>
                     </tr>
                 </table>
             </div>
@@ -179,10 +220,10 @@
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtIdSucursal" ErrorMessage="Debe de ingresar numeros" CssClass="colorValidator" ValidationExpression="^[0-9,$]*$" ValidationGroup="grupo1"></asp:RegularExpressionValidator>
                     </td>
                     <td>
-                        <asp:Button ID="btnfiltrar" runat="server" OnClick="btnfiltrar_Click" Text="Filtrar" ValidationGroup="grupo1" />
+                        <asp:Button ID="btnfiltrar" runat="server" OnClick="btnfiltrar_Click" CssClass="btnEstilo" Text="Filtrar" ValidationGroup="grupo1" />
                     </td>
                     <td>
-                        <asp:Button ID="btMostrarTodos" runat="server" OnClick="btMostrarTodos_Click" Text="Mostrar Todos" />
+                        <asp:Button ID="btMostrarTodos" runat="server" OnClick="btMostrarTodos_Click" CssClass="btnEstilo" Text="Mostrar Todos" />
                     </td>
                 </tr>
             </table>
