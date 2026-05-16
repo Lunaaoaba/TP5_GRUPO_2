@@ -54,7 +54,9 @@ td{
     color: #243b55;
     font-weight: bold;
 }
-
+.compacto td {
+    padding: 3px 8px;
+}
 input[type=text] {
     padding: 5px;
     border: 1px solid #6c8ebf;
@@ -91,6 +93,32 @@ input[type=text] {
     border-radius: 8px;
     margin: 0;
 }
+.Sub2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(90deg, #1d3f91, #2f6fff);
+    padding: 10px 20px;
+    border-left: 6px solid #7ec8ff;
+    border-radius: 8px;
+    margin: 0;
+}
+.tb_style {
+    padding: 10px 14px;
+    font-size: 20px;
+    color: #243b55;
+    border: 2px solid #8ab1e6;
+    border-radius: 8px;
+    background-color: #f7faff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    width: 50px;
+}
+
+.tb_style:focus {
+    border-color: #2f6fff;
+    box-shadow: 0 0 8px rgba(47, 111, 255, 0.4);
+    background-color: #ffffff;
+}
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
@@ -98,20 +126,32 @@ input[type=text] {
 <body>
     <form id="form1" runat="server">
         <div id="contenedor">
-    <div class="centrar">
-        <table>
-            <tr>
-                <td style="padding-right: 60px">
-                    <u><asp:HyperLink ID="ASucursal" runat="server" NavigateUrl="~/AgregarSucursal.aspx">Agregar Sucursal</asp:HyperLink></u></td>
-                <td style="padding-right: 60px">
-                    <u><asp:HyperLink ID="LSucursal" runat="server" NavigateUrl="~/ListadoSucursales.aspx">Listado de Sucursales</asp:HyperLink></u></td>
-                <td>
-                    <u><asp:HyperLink ID="ESucursal" runat="server" NavigateUrl="~/EliminarSucursales.aspx">Eliminar Sucursal</asp:HyperLink></u></td>
-            </tr>
-        </table>
-    </div>
-    <h3 class ="Titulo"> Eliminar Sucursal</h3>
-</div>
+            <div class="centrar">
+                <table>
+                    <tr>
+                        <td style="padding-right: 60px">
+                            <u><asp:HyperLink ID="ASucursal" runat="server" NavigateUrl="~/AgregarSucursal.aspx">Agregar Sucursal</asp:HyperLink></u></td>
+                        <td style="padding-right: 60px">
+                            <u><asp:HyperLink ID="LSucursal" runat="server" NavigateUrl="~/ListadoSucursales.aspx">Listado de Sucursales</asp:HyperLink></u></td>
+                        <td>
+                            <u><asp:HyperLink ID="ESucursal" runat="server" NavigateUrl="~/EliminarSucursales.aspx">Eliminar Sucursal</asp:HyperLink></u></td>
+                    </tr>
+                </table>
+            </div>
+            <h3 class ="Titulo"> Eliminar Sucursal</h3>
+        </div>
+        <div>
+            <table class="compacto">
+                <tr>
+                    <td>
+                        <h3 class="Sub2">Ingresar ID Sucursal</h3>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txtEliminar" CssClass="tb_style" runat="server"></asp:TextBox>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </form>
 </body>
 </html>
