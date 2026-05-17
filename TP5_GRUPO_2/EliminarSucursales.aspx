@@ -4,122 +4,132 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<style>
-    body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-image: url('img/fondo2.png');
-    background-position: center;
-    background-repeat: no-repeat;
-}
-#contenedor {
-    display: flex;
-    flex-direction: column;
-}
-.centrar {
-    justify-content: center;
-    background-color: #3f5f8a;
-    padding: 12px;
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    gap: 40px;
-}
-.centrar a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-.centrar a:hover {
-    color: #bcd4f6;
-}
-.Titulo {
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    background-color: #2f4f75;
-    display: inline-block;
-    padding: 10px 20px;
-    margin-top: 20px;
-    border-radius: 6px;
-}
-.cuadro {
-    background-color: #dfe8f5;
-    width: 420px;
-    margin: 40px auto;
-    padding: 20px;
-    border-radius: 6px;
-}
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: url('img/fondo2.png');
+            background-position: center;
+            background-repeat: no-repeat;
+        }
 
-td{
-    padding: 8px; 
-    color: #243b55;
-    font-weight: bold;
-}
-.compacto td {
-    padding: 3px 8px;
-}
-input[type=text] {
-    padding: 5px;
-    border: 1px solid #6c8ebf;
-    border-radius: 4px;
-}
+        #contenedor {
+            display: flex;
+            flex-direction: column;
+        }
 
-.errorNombre {
-    display: block;
-    font-size: 10px;
-    color: red;
-    margin-top: 2px;
-    padding: 0;
-    line-height: 1.2;
-}
+        .centrar {
+            justify-content: center;
+            background-color: #3f5f8a;
+            padding: 12px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
 
-.Titulo{
-    font-size: 42px;
-    font-weight: bold;
-    color: white;
-    background: linear-gradient(90deg, #1b49d4, #27c6ff);
-    padding: 18px 35px;
-    border-left: 8px solid #8ffcff;
-    border-radius: 12px;
-    width: fit-content;
-}
+            .centrar a {
+                color: white;
+                text-decoration: none;
+                font-weight: bold;
+            }
 
-.Subtitulo{
-    font-size: 28px;
-    font-weight: bold;
-    color: white;
-    background: linear-gradient(90deg, #1d3f91, #2f6fff);
-    padding: 10px 20px;
-    border-left: 6px solid #7ec8ff;
-    border-radius: 8px;
-    margin: 0;
-}
-.Sub2 {
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-    background: linear-gradient(90deg, #1d3f91, #2f6fff);
-    padding: 10px 20px;
-    border-left: 6px solid #7ec8ff;
-    border-radius: 8px;
-    margin: 0;
-}
-.tb_style {
-    padding: 10px 14px;
-    font-size: 20px;
-    color: #243b55;
-    border: 2px solid #8ab1e6;
-    border-radius: 8px;
-    background-color: #f7faff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    width: 50px;
-}
+                .centrar a:hover {
+                    color: #bcd4f6;
+                }
 
-.tb_style:focus {
-    border-color: #2f6fff;
-    box-shadow: 0 0 8px rgba(47, 111, 255, 0.4);
-    background-color: #ffffff;
-}
-</style>
+        .Titulo {
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            background-color: #2f4f75;
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border-radius: 6px;
+        }
+
+        .cuadro {
+            background-color: #dfe8f5;
+            width: 420px;
+            margin: 40px auto;
+            padding: 20px;
+            border-radius: 6px;
+        }
+
+        td {
+            padding: 8px;
+            color: #243b55;
+            font-weight: bold;
+        }
+
+        .compacto td {
+            padding: 3px 8px;
+        }
+
+        input[type=text] {
+            padding: 5px;
+            border: 1px solid #6c8ebf;
+            border-radius: 4px;
+        }
+
+        .errorNombre {
+            display: block;
+            font-size: 10px;
+            color: red;
+            margin-top: 2px;
+            padding: 0;
+            line-height: 1.2;
+        }
+
+        .Titulo {
+            font-size: 42px;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(90deg, #1b49d4, #27c6ff);
+            padding: 18px 35px;
+            border-left: 8px solid #8ffcff;
+            border-radius: 12px;
+            width: fit-content;
+        }
+
+        .Subtitulo {
+            font-size: 28px;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(90deg, #1d3f91, #2f6fff);
+            padding: 10px 20px;
+            border-left: 6px solid #7ec8ff;
+            border-radius: 8px;
+            margin: 0;
+        }
+
+        .Sub2 {
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(90deg, #1d3f91, #2f6fff);
+            padding: 10px 20px;
+            border-left: 6px solid #7ec8ff;
+            border-radius: 8px;
+            margin: 0;
+        }
+
+        .tb_style {
+            padding: 10px 14px;
+            font-size: 20px;
+            color: #243b55;
+            border: 2px solid #8ab1e6;
+            border-radius: 8px;
+            background-color: #f7faff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            width: 50px;
+        }
+
+            .tb_style:focus {
+                border-color: #2f6fff;
+                box-shadow: 0 0 8px rgba(47, 111, 255, 0.4);
+                background-color: #ffffff;
+            }
+    </style>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
 </head>
@@ -148,6 +158,13 @@ input[type=text] {
                     </td>
                     <td>
                         <asp:TextBox ID="txtEliminar" CssClass="tb_style" runat="server"></asp:TextBox>
+                    </td>
+                    <td style="padding-left:25px">
+                        <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" />
+                    </td>
+                    <td> 
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtEliminar" CssClass="errorNombre" ErrorMessage="Ingrese un ID"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="revEliminarID" runat="server" ControlToValidate="txtEliminar" CssClass="errorNombre" ErrorMessage="Solo ingresar Numeros" ValidationExpression="^[0-9]+$"></asp:RegularExpressionValidator>
                     </td>
                 </tr>
             </table>

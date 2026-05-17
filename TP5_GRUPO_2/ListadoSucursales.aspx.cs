@@ -9,6 +9,8 @@ namespace TP5_GRUPO_2
 {
     public partial class ListadoSucursales : System.Web.UI.Page
     {
+        private string consulta; 
+        private BD_Sucursal Sucursal = new BD_Sucursal();
         private void CargarGrid(string condicion = "")
         {
             consulta = "SELECT Id_Sucursal, NombreSucursal, " +  "DescripcionSucursal, DescripcionProvincia, DireccionSucursal " + "FROM Sucursal " + "INNER JOIN Provincia " + "ON Sucursal.Id_ProvinciaSucursal = Provincia.Id_Provincia ";
@@ -16,8 +18,6 @@ namespace TP5_GRUPO_2
             Sucursal.Cargar_BD_GridView(consulta, gvsucursal);
         }
 
-        private string consulta; 
-        private BD_Sucursal Sucursal = new BD_Sucursal();
         protected void Page_Load(object sender, EventArgs e)
         {
 

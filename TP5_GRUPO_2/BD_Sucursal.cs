@@ -37,7 +37,7 @@ namespace TP5_GRUPO_2
         {
             SqlConnection Conexion = new SqlConnection(conexionBBD);
             Conexion.Open();
-           
+
             SqlCommand Comando = new SqlCommand(consulta, Conexion);
             SqlDataReader Lectura = Comando.ExecuteReader();
 
@@ -64,6 +64,13 @@ namespace TP5_GRUPO_2
 
             lectura.Close();
             conexion.Close();
+        }
+
+        public int Eliminar_BD(string consulta)
+        {
+            int filasAfectadas = 0;
+
+            return filasAfectadas;
         }
     }
 }

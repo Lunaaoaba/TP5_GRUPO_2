@@ -9,7 +9,13 @@ namespace TP5_GRUPO_2
 {
     public partial class EliminarSucursales : System.Web.UI.Page
     {
+        private string consulta; 
         protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnEliminar_Click(object sender, EventArgs e)
         {
 
         }
