@@ -66,11 +66,34 @@ namespace TP5_GRUPO_2
             conexion.Close();
         }
 
-        public int Eliminar_BD(string consulta)
+        public int EliminarSucursal_BD(string consulta)
         {
-            int filasAfectadas = 0;
+            if (!int.TryParse(consulta, out _))
+            {
+                return 1;
+            }
+            try
+            {
+                SqlConnection conexion = new SqlConnection(conexionBBD);
+                conexion.Open();
 
-            return filasAfectadas;
+                string consultaVerificar = "SELECT Id_Sucursal FROM Sucursal WHERE Id_Sucursal = " + consulta;
+                SqlCommand comandoVerificar = new SqlCommand(consultaVerificar, conexion);
+                object existe = comandoVerificar.ExecuteScalar();
+
+                conexion.Close();
+
+                if (existe == null)
+                {
+                    return 2;
+                }
+
+                return 0;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

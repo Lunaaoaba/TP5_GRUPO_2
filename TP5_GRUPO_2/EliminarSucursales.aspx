@@ -129,6 +129,17 @@
                 box-shadow: 0 0 8px rgba(47, 111, 255, 0.4);
                 background-color: #ffffff;
             }
+        .Button {
+            border-color: #ff2f2f;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            background-color: #ffffff;
+            color: ghostwhite;
+            background: linear-gradient(90deg, #910000, #ff2f2f);
+            width: 100px;
+            height: 40px;
+        }
     </style>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
@@ -160,7 +171,7 @@
                         <asp:TextBox ID="txtEliminar" CssClass="tb_style" runat="server"></asp:TextBox>
                     </td>
                     <td style="padding-left:25px">
-                        <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" />
+                        <asp:Button ID="btnEliminar" runat="server" CssClass="Button" Text="Eliminar" OnClick="btnEliminar_Click" />
                     </td>
                     <td> 
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtEliminar" CssClass="errorNombre" ErrorMessage="Ingrese un ID"></asp:RequiredFieldValidator>

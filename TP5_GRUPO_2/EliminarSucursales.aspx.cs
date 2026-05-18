@@ -17,7 +17,7 @@ namespace TP5_GRUPO_2
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-
+            consulta = "DELETE FROM Sucursal WHERE Id_Sucursal = " + txtEliminar.Text;
         }
     }
 }
