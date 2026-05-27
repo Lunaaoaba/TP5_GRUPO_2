@@ -15,9 +15,10 @@ namespace TP5_GRUPO_2
 
         public int Agregar_BD(string consulta)
         {
+            SqlConnection conexion;
             try
             {
-                SqlConnection conexion = new SqlConnection(conexionBBD);
+                conexion = new SqlConnection(conexionBBD);
                 conexion.Open();
 
                 SqlCommand comando = new SqlCommand(consulta, conexion);
@@ -35,60 +36,66 @@ namespace TP5_GRUPO_2
 
         public void Cargar_BD_DropDownList(string consulta, DropDownList ddlProvincia, string item, string value)
         {
-            SqlConnection Conexion = new SqlConnection(conexionBBD);
-            Conexion.Open();
-
-            SqlCommand Comando = new SqlCommand(consulta, Conexion);
-            SqlDataReader Lectura = Comando.ExecuteReader();
-
-            ddlProvincia.Items.Add(new ListItem("--Seleccionar--", "0"));
-            while (Lectura.Read())
+            SqlConnection Conexion;
+            try
             {
-                ddlProvincia.Items.Add(new ListItem(Lectura[item].ToString(), Lectura[value].ToString()));
-            }
+                Conexion = new SqlConnection(conexionBBD);
+                Conexion.Open();
 
-            Conexion.Close();
+                SqlCommand Comando = new SqlCommand(consulta, Conexion);
+                SqlDataReader Lectura = Comando.ExecuteReader();
+
+                ddlProvincia.Items.Add(new ListItem("--Seleccionar--", "0"));
+                while (Lectura.Read())
+                {
+                    ddlProvincia.Items.Add(new ListItem(Lectura[item].ToString(), Lectura[value].ToString()));
+                }
+
+                Conexion.Close();
+            }
+            catch (Exception ex)
+            {
+               throw ex;
+            }
         }
 
         public void Cargar_BD_GridView(string consulta, GridView gvsucursal)
         {
-            SqlConnection conexion = new SqlConnection(conexionBBD);
-            conexion.Open();
+            SqlConnection conexion;
+            try
+            {
+                conexion = new SqlConnection(conexionBBD);
+                conexion.Open();
 
-            SqlCommand comando = new SqlCommand(consulta, conexion);
+                SqlCommand comando = new SqlCommand(consulta, conexion);
 
-            SqlDataReader lectura = comando.ExecuteReader();
+                SqlDataReader lectura = comando.ExecuteReader();
 
-            gvsucursal.DataSource = lectura;
-            gvsucursal.DataBind();
+                gvsucursal.DataSource = lectura;
+                gvsucursal.DataBind();
 
-            lectura.Close();
-            conexion.Close();
+                conexion.Close();
+            }
+            catch (Exception ex)
+            { 
+                throw ex; 
+            }
         }
 
         public int EliminarSucursal_BD(string consulta)
         {
-            if (!int.TryParse(consulta, out _))
-            {
-                return 1;
-            }
+            SqlConnection conexion;
             try
             {
-                SqlConnection conexion = new SqlConnection(conexionBBD);
+                conexion = new SqlConnection(conexionBBD);
                 conexion.Open();
 
-                string consultaVerificar = "SELECT Id_Sucursal FROM Sucursal WHERE Id_Sucursal = " + consulta;
-                SqlCommand comandoVerificar = new SqlCommand(consultaVerificar, conexion);
-                object existe = comandoVerificar.ExecuteScalar();
+                SqlCommand comando = new SqlCommand(consulta, conexion);
+                int filasAfectadas = comando.ExecuteNonQuery();
 
                 conexion.Close();
 
-                if (existe == null)
-                {
-                    return 2;
-                }
-
-                return 0;
+                return filasAfectadas;
             }
             catch (Exception ex)
             {

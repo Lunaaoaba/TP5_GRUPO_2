@@ -140,6 +140,44 @@
             width: 100px;
             height: 40px;
         }
+
+        .errorID {
+        display: block;
+        margin-top: 4px;
+        padding: 4px 8px;
+        font-size: 12px;
+        font-weight: bold;
+        color: #1d3f91;
+        background-color: #e8f1ff;
+        border-left: 4px solid #2f6fff;
+        border-radius: 6px;
+        width: fit-content;
+        }
+
+        .mensajeExitoso {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 16px;
+        font-size: 14px;
+        font-weight: bold;
+        color: #155724;
+        background-color: #d4edda;
+        border-left: 6px solid #28a745;
+        border-radius: 8px;
+        }
+
+        .mensajeError {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 16px;
+        font-size: 14px;
+        font-weight: bold;
+        color: #721c24;
+        background-color: #f8d7da;
+        border-left: 6px solid #dc3545;
+        border-radius: 8px;
+        }
+
     </style>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
@@ -174,8 +212,21 @@
                         <asp:Button ID="btnEliminar" runat="server" CssClass="Button" Text="Eliminar" OnClick="btnEliminar_Click" />
                     </td>
                     <td> 
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtEliminar" CssClass="errorNombre" ErrorMessage="Ingrese un ID"></asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator ID="revEliminarID" runat="server" ControlToValidate="txtEliminar" CssClass="errorNombre" ErrorMessage="Solo ingresar Numeros" ValidationExpression="^[0-9]+$"></asp:RegularExpressionValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtEliminar" CssClass="errorID" ErrorMessage="Ingrese un ID"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="revEliminarID" runat="server" ControlToValidate="txtEliminar" CssClass="errorID" ErrorMessage="Solo ingresar Numeros" ValidationExpression="^[0-9]+$"></asp:RegularExpressionValidator>
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td>
+                        
+                    </td>
+                    <td>
+
+                        <asp:Label ID="lblMensajeExitoso" runat="server" CssClass="mensajeExitoso" Visible="false"></asp:Label>
+                        <asp:Label ID="lblMensajeError" runat="server" CssClass="mensajeError" Visible="false"></asp:Label>
+
                     </td>
                 </tr>
             </table>
